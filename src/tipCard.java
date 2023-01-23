@@ -299,8 +299,25 @@ public class tipCard {
             case 7:
 
                 System.out.println("case 7 execute");
-                s.append("");
-                    return("WIP - not yet supported.");
+                s.append("{\"header\": {\"title\": \"");
+                s.append(headerTitleEng);
+                s.append("\"},\"text\": {\"title\": \"");
+                s.append(cardTitleEng);
+                s.append("\",\"body\": \"");
+                s.append(cardBodyEng);
+                s.append("\",}},\"buttons\": [{\"title\": \"");
+                s.append(button1TextEng);
+                s.append("\",\"actionUrl\": \"");
+                s.append(button1Deeplink);
+                s.append("\"},{\"title\": \"");
+                s.append(button2TextEng);
+                s.append("\",\"actionUrl\": \"");
+                s.append(button2Deeplink);
+                s.append("\"}]}");
+                    
+                rawQuery = ("stories:"+s.toString());
+                constructedQuery = ("stories:"+u.encode(s.toString()));
+                return (constructedQuery);
 
             //English + Spanish, 2 custom buttons
             case 8:
