@@ -8,7 +8,6 @@ https://etwiki.sys.comcast.net/pages/viewpage.action?spaceKey=XDSS&title=Stories
 Feedback/improvement requests can be sent to patrick_kiefer@comcast.com. Fair warning: I know nothing about web programming, so this is a currently standalone Java product.
 
 v1 (August 2022) - implement basic functionality (using console UI) with bilingual support
-v2 (Q3/Q4 2022) - add visual UI support/discuss integration into existing products
 */
 import java.util.*;
 
@@ -35,29 +34,40 @@ public class App {
 
        
 
-       Thread.sleep(2000);
+    /*------- THIS IS WHERE TO SET YOUR VARIABLES FOR TIP CARD CREATION -----------
+    
+    currently, these are hard coded strings for demo/testing purposes. these are the variables you can assign values to in order to create a tip card object
+    that will correctly format the output.
+
+    */
 
        
        final String bilingual, headerTitleEng, headerTitleSpa, cardTitleEng, cardTitleSpa, cardBodyEng, cardBodySpa, button1TextEng, button1TextSpa, button1Deeplink, button2TextSpa, button2TextEng, button2Deeplink, addToListPrompt;
 
-       headerTitleEng = "Xfinity Rewards Movie";
-       headerTitleSpa = "Película de Xfinity Rewards";
+       headerTitleEng = "English Header";
+       headerTitleSpa = "Spanish Header";
 
 
-       cardTitleEng = "Say 'Purchases' into your voice remote";
-       cardBodyEng = "It may take up to two hours for the movie to appear in your purchases folder. The promotion will be applied automatically - you'll see the discount on your next bill.";
+       cardTitleEng = "English title";
+       cardBodyEng = "This is the english card body text.";
        
-       cardTitleSpa = "Di compras en tu control remoto";
-       cardBodySpa = "Puede tardar hasta 2 horas para que la película aparezca en tu sección de compras. La promoción se aplica automáticamente. Verás el descuento en la próxima factura.";
+       cardTitleSpa = "Spanish title";
+       cardBodySpa = "This is the spanish card body text.";
 
 
-       button1TextEng = "Get the Xfinity App";
-       button1TextSpa = "Obtén la Xfinity app";
+       button1TextEng = "Button 1";
+       button1TextSpa = "Button 1 (SPA)";
        button1Deeplink = "appmanager:launchApplication#appId=int.fe.leadgen.prod&additionalLaunchParams=%7B%22urlComponents.query.listingId%22%3A%22leadgen-xfinity-rewards-2021-q3%22%2C%22urlComponents.query.recordId%22%3A%2271370a3f-acd8-4605-82d5-88e58797bd84%22%2C%22urlComponents.query.displayStyle%22%3A%22x1%22%2C%22urlComponents.query.launchedFrom%22%3A%22tipcard%22%7D";
 
 
+       button2TextEng = "Button 2";
+       button2TextSpa = "Button 2 (SPA)";
+       button2Deeplink = "appmanager:launchApplication#appId=int.fe.leadgen.prod&additionalLaunchParams=%7B%22urlComponents.query.listingId%22%3A%22leadgen-xfinity-rewards-2021-q3%22%2C%22urlComponents.query.recordId%22%3A%2271370a3f-acd8-4605-82d5-88e58797bd84%22%2C%22urlComponents.query.displayStyle%22%3A%22x1%22%2C%22urlComponents.query.launchedFrom%22%3A%22tipcard%22%7D";
+
+//---------------------------------------------------------------
+
        //tipCard t = new tipCard("Planifica tu voto","Disponible en inglés y español","Planifica Tu Voto está disponible en NBCNews.com/PlanYourVote y PlanificaTuVoto.com.");
-        tipCard t = new tipCard(headerTitleEng,cardTitleEng,cardBodyEng,headerTitleSpa,cardTitleSpa,cardBodySpa);
+        tipCard t = new tipCard(headerTitleEng,cardTitleEng,cardBodyEng,button1TextEng,button1Deeplink,button2TextEng,button2Deeplink);
 
         //tipCard t = new tipCard(headerTitleEng,cardTitleEng,cardBodyEng,button1TextEng,button1Deeplink,headerTitleSpa,cardTitleSpa,cardBodySpa,button1TextSpa);
 
@@ -66,6 +76,8 @@ public class App {
         t.copyJsonToClipboard();
         System.out.println("Encoded query copied to clipboard - complete.");
         System.out.println("\nRaw Query: \n\n" + t.getRawQuery() + "\n\n\nEncoded Query: \n\n" + t.getEncodedQuery());
+
+
     }
 
     //debug switch
