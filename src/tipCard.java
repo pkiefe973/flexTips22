@@ -329,8 +329,33 @@ public class tipCard {
 
             // English + Spanish, 1 custom button + 1 add to my list
             case 10:
-                    return("WIP - not yet supported.");
 
+                System.out.println("Case 10 execute");
+                s.append("{\"header\":{\"localization\":{\"en-US\": {\"title\": \"");
+                s.append(headerTitleEng);
+                s.append("\"},\"es-US\":{\"title\":\"");
+                s.append(headerTitleSpa);
+                s.append("\"}}},\"text\":{\"localization\":{\"en-US\":{\"title\":\"");
+                s.append(cardTitleEng);
+                s.append("\",\"body\":\"");
+                s.append(cardBodyEng);
+                s.append("\" },\"es-US\":{\"title\": \"");
+                s.append(cardTitleEng);
+                s.append("\",\"body\": \"");
+                s.append(cardBodySpa);
+                s.append("\"}}},\"buttons\":[{\"localization\":{\"en-US\":{\"title\":\"");
+                s.append(button1TextEng);
+                s.append("\"},\"es-US\":{\"title\":\"");
+                s.append(button1TextSpa);
+                s.append("\"}},\"actionUrl\": \"");
+                s.append(button1Deeplink);
+                s.append("\"},{\"type\": \"mylist\"}],\"programEntityId\": \"");
+                s.append(addToListID);
+                s.append("\"}");
+
+                rawQuery = ("stories:"+s.toString());
+                constructedQuery = ("stories:"+u.encode(s.toString()));
+                return (constructedQuery);
 
             //
 

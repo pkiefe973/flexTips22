@@ -23,7 +23,7 @@ public class App {
         //a.getUserInput();
        // getUserInput();
 
-        displayHowTo();
+       displayHowTo();
 
 
        
@@ -67,7 +67,10 @@ public class App {
 //---------------------------------------------------------------
 
        //tipCard t = new tipCard("Planifica tu voto","Disponible en inglés y español","Planifica Tu Voto está disponible en NBCNews.com/PlanYourVote y PlanificaTuVoto.com.");
-        tipCard t = new tipCard(headerTitleEng,cardTitleEng,cardBodyEng,button1TextEng,button1Deeplink,button2TextEng,button2Deeplink);
+
+
+// (overloaded) CONSTRUCTOR FOR TIP CARD OBJECT BASED ON PROVIDED PARAMATERS
+        tipCard t = new tipCard(headerTitleEng, cardTitleEng, cardBodyEng, button1TextEng, button1Deeplink, button2TextEng, button2Deeplink, headerTitleSpa, cardTitleSpa, cardBodySpa, button1TextSpa, button2TextSpa);
 
         //tipCard t = new tipCard(headerTitleEng,cardTitleEng,cardBodyEng,button1TextEng,button1Deeplink,headerTitleSpa,cardTitleSpa,cardBodySpa,button1TextSpa);
 
