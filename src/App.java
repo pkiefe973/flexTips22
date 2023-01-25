@@ -72,7 +72,7 @@ public class App {
         //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng,  button1TextEng,  button1Deeplink, headerTitleSpa,  cardTitleSpa,  cardBodySpa,  button1TextSpa);
         
         //case 6 - Eng + Spa, 1 add to my list button
-        //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng, headerTitleSpa,  cardTitleSpa,  cardBodySpa,  addToListID,  a);
+        //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng, headerTitleSpa,  cardTitleSpa,  cardBodySpa,  addToListID,  1);
         
         //case 7 - Eng, 2 custom buttons
         //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng,  button1TextEng,  button1Deeplink,  button2TextEng,  button2Deeplink);
@@ -81,7 +81,7 @@ public class App {
         //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng,  button1TextEng,  button1Deeplink,  button2TextEng,  button2Deeplink,  headerTitleSpa,  cardTitleSpa,  cardBodySpa,  button1TextSpa,  button2TextSpa);
 
         //case 9 - Eng, 1 custom button + 1 add to my list button
-        //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng,  button1TextEng,  button1Deeplink,  addToListID, a);
+        //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng,  button1TextEng,  button1Deeplink,  addToListID, 1);
 
         //case 10 - Eng + Spa, 1 custom button + 1 add to my list button
         tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng,  button1TextEng,  button1Deeplink,  headerTitleSpa,  cardTitleSpa,  cardBodySpa,  button1TextSpa,  addToListID);
@@ -95,77 +95,10 @@ public class App {
 
     }
 
-    //debug switch
-    boolean debug = false;
-
-    /*debug copy/pastable
-     * 
-     * if(debug) System.out.println("DEBUG OUTPUT: " + [VAR_NAME]);
-     */
-
-    //instance variables for tip card population
-    // set to *private*, protected, final, etc
-    static String bilingual, headerTitleEng, headerTitleSpa, cardTitleEng, cardTitleSpa, cardBodyEng, cardBodySpa, button1TextEng, button1TextSp, button1Deeplink, button2TextSpa, button2TextEng, button2Deeplink, addToListPrompt;
-    static boolean collectBilingual, addToMyList = false;
-    static int maxButtons = 2;
-    static int buttonCount;
-    
-  
-
-     //populate instance variables with user data
-    public static void getUserInput(){
-       
-        //create object for user input
-        Scanner sc = new Scanner(System.in);
-
-        //gather parameters required for tip card configuration
-        System.out.println("Does this card require bilingual support? (Y/N): ");
-        bilingual = sc.next();
-        if(bilingual.equalsIgnoreCase("Y")) collectBilingual = true;
-
-        System.out.println("Does this card require an add to my list option? (Y/N): ");
-        if(addToListPrompt.equalsIgnoreCase("Y")){
-            maxButtons = 1;
-            addToMyList = true;
-        }
-
-        //determine button count desired, reject if out of bounds
-        int i = 0;
-        while(i == 0){
-            System.out.println("How many buttons does this card have (not including Add to My List): ");
-            buttonCount = sc.nextInt();
-            if(buttonCount > maxButtons){
-                i = 0;
-                System.out.println("You have exceeded the maximum number of buttons. Please enter a value of " + maxButtons + " or lower.");
-            }
-
-        }
-
-        System.out.println("\nInput English header title: ");
-        headerTitleEng = sc.next();
-        if(collectBilingual){
-            System.out.println("\nInput Spanish header title: ");
-            headerTitleSpa = sc.next();
-        }
-        System.out.println("\nInput English card title: ");
-        cardTitleEng = sc.next();
-        if(collectBilingual){
-            System.out.println("\nInput Spanish card title: ");
-            cardTitleSpa = sc.next();
-        }
-        System.out.println("\nInput English card body: ");
-        cardBodyEng = sc.next();
-        if(collectBilingual){
-            System.out.println("\nInput Spanish card body: ");
-            cardBodySpa = sc.next();
-        }
+    public static void displayHowTo(){
+        System.out.println("HOW TO USE THIS TIP CARD GENERATOR\n\nLocate the type of tip card you'd like to create in the list below:\n\n1) English only, no buttons\n2) English + Spanish, no buttons\n3) English only, 1 custom button\n4) English only, 1 add to my list button\n5) English + Spanish, 1 custom button\n6) English + Spanish, 1 add to my list button\n**ADDITIONAL TYPES WILL BE ADDED**\n\nEnter the number of the type of tip card you'd like to create:");
 
     }
-
-        public static void displayHowTo(){
-            System.out.println("HOW TO USE THIS TIP CARD GENERATOR\n\nLocate the type of tip card you'd like to create in the list below:\n\n1) English only, no buttons\n2) English + Spanish, no buttons\n3) English only, 1 custom button\n4) English only, 1 add to my list button\n5) English + Spanish, 1 custom button\n6) English + Spanish, 1 add to my list button\n**ADDITIONAL TYPES WILL BE ADDED**\n\nEnter the number of the type of tip card you'd like to create:");
-
-        }
 
     }
 
