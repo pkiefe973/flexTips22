@@ -15,24 +15,8 @@ import java.util.*;
 public class App {
 
     public static void main(String[] args) throws Exception {
-        String releaseNotes = "Added support through case 6";
-        System.out.println("\n---------------------\nFlex Editorial Stories Generator\nv1.3 - 9/27/2022\nRelease notes: " + releaseNotes + "\nAuthor: patrick_kiefer@comcast.com\n---------------------\n");
-
-        int caseNum;
-        //App a = new App();
-        //a.getUserInput();
-       // getUserInput();
 
        displayHowTo();
-
-
-       
-
-       Scanner sc = new Scanner(System.in);
-       caseNum = sc.nextInt();
-       sc.close();
-
-       
 
     /*------- THIS IS WHERE TO SET YOUR VARIABLES FOR TIP CARD CREATION -----------
     
@@ -42,17 +26,19 @@ public class App {
     */
 
        
-       final String bilingual, headerTitleEng, headerTitleSpa, cardTitleEng, cardTitleSpa, cardBodyEng, cardBodySpa, button1TextEng, button1TextSpa, button1Deeplink, button2TextSpa, button2TextEng, button2Deeplink, addToListPrompt;
+       final String bilingual, headerTitleEng, headerTitleSpa, cardTitleEng, cardTitleSpa, cardBodyEng, cardBodySpa, button1TextEng, button1TextSpa, button1Deeplink, button2TextSpa, button2TextEng, button2Deeplink, addToListID;
 
        headerTitleEng = "English Header";
        headerTitleSpa = "Spanish Header";
-
 
        cardTitleEng = "English title";
        cardBodyEng = "This is the english card body text.";
        
        cardTitleSpa = "Spanish title";
        cardBodySpa = "This is the spanish card body text.";
+
+       //Great british baking show seriesmaster ID
+       addToListID = "6269872668374097112";
 
 
        button1TextEng = "Button 1";
@@ -69,10 +55,36 @@ public class App {
        //tipCard t = new tipCard("Planifica tu voto","Disponible en inglés y español","Planifica Tu Voto está disponible en NBCNews.com/PlanYourVote y PlanificaTuVoto.com.");
 
 
-// (overloaded) CONSTRUCTOR FOR TIP CARD OBJECT BASED ON PROVIDED PARAMATERS
-        tipCard t = new tipCard(headerTitleEng, cardTitleEng, cardBodyEng, button1TextEng, button1Deeplink, button2TextEng, button2Deeplink, headerTitleSpa, cardTitleSpa, cardBodySpa, button1TextSpa, button2TextSpa);
+// (overloaded) CONSTRUCTORS FOR TIP CARD OBJECT BASED ON PROVIDED PARAMETERS - one for each scenario has been provided for convenience, comment/uncomment as needed.
+        
+        //case 1 - Eng, text only
+        //tipCard t = new tipCard(headerTitleEng,cardTitleEng,cardBodyEng);
 
-        //tipCard t = new tipCard(headerTitleEng,cardTitleEng,cardBodyEng,button1TextEng,button1Deeplink,headerTitleSpa,cardTitleSpa,cardBodySpa,button1TextSpa);
+        //case 2 - Eng + Spa, text only
+        //tipCard t = new tipCard(headerTitleEng,cardTitleEng,cardBodyEng,headerTitleSpa,cardTitleSpa,cardBodySpa);
+
+        //case 3 - Eng, 1 custom button
+        //tipCard t = new tipCard(headerTitleEng,  cardTitleEng,  cardBodyEng,  button1TextEng,  button1Deeplink);
+
+        //case 4 - Eng, 1 add to my list button
+        //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng,  addToListID);
+
+        //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng,  button1TextEng,  button1Deeplink, headerTitleSpa,  cardTitleSpa,  cardBodySpa,  button1TextSpa);
+        
+        //case 6 - Eng + Spa, 1 add to my list button
+        //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng, headerTitleSpa,  cardTitleSpa,  cardBodySpa,  addToListID,  a);
+        
+        //case 7 - Eng, 2 custom buttons
+        //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng,  button1TextEng,  button1Deeplink,  button2TextEng,  button2Deeplink);
+        
+        //case 8 - Eng + Spa, 2 custom buttons
+        //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng,  button1TextEng,  button1Deeplink,  button2TextEng,  button2Deeplink,  headerTitleSpa,  cardTitleSpa,  cardBodySpa,  button1TextSpa,  button2TextSpa);
+
+        //case 9 - Eng, 1 custom button + 1 add to my list button
+        //tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng,  button1TextEng,  button1Deeplink,  addToListID, a);
+
+        //case 10 - Eng + Spa, 1 custom button + 1 add to my list button
+        tipCard t = new tipCard( headerTitleEng,  cardTitleEng,  cardBodyEng,  button1TextEng,  button1Deeplink,  headerTitleSpa,  cardTitleSpa,  cardBodySpa,  button1TextSpa,  addToListID);
 
         t.populateJSON();
         System.out.println("Attempting to copy to clipboard...");

@@ -77,6 +77,7 @@ public class tipCard {
     }
 
     //English + Spanish, 1 add to my list button 
+    //OF NOTE - this constructor contains an integer parameter. Any integer can be passed - this is simply to differentiate the constructor.
         public tipCard(String headerEng, String titleEng, String bodyEng,String headerSpa, String titleSpa, String bodySpa, String listID, int a){
 
         headerTitleEng = headerEng;
@@ -122,6 +123,7 @@ public class tipCard {
     }
 
     // English only, 1 custom button + 1 add to my list
+    //OF NOTE - this constructor contains an integer parameter. Any integer can be passed - this is simply to differentiate the constructor.
     public tipCard(String headerEng, String titleEng, String bodyEng, String button1Eng, String button1URL, String listID, int a){
 
         headerTitleEng = headerEng;
